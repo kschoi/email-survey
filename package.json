@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "engines": {
-    "node": "12.18.0",
+    "node": "12.18.3",
     "npm": "6.13.4"
   },
   "repository": "https://github.com/kschoi/email-survey.git",
