@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "engines": {
-    "node": "12.18.0",
-    "npm": "6.13.4"
+    "node": "^12.18.0",
+    "npm": "^6.13.4"
   },
   "repository": "https://github.com/kschoi/email-survey.git",
   "author": "kyungsun choi <kschoi0308@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "pm2start": "pm2 start ecosystem.config.js",
+    "pm2stop": "pm2 stop app",
+    "pm2restart": "pm2 restart app"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
