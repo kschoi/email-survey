@@ -1,7 +1,9 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const app = express();
 const dotenv = require("dotenv");
 const routes = require("./routes");
+
 dotenv.config();
 
 require("./services/passport");
@@ -17,6 +19,8 @@ app.use((req, res, next) => {
 });
 
 routes(app);
+
+mongoose.connect(process.env.MONGO_URI);
 
 app.listen(PORT, () => {
   process.send && process.send("ready");
