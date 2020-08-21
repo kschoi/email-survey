@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
+const routes = require("./routes");
 dotenv.config();
 
 require("./services/passport");
@@ -15,7 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 
-require("./routes/routes")(app);
+routes(app);
 
 app.listen(PORT, () => {
   process.send && process.send("ready");
@@ -24,8 +25,9 @@ app.listen(PORT, () => {
 
 process.on("SIGINT", () => {
   isDisableKeepAlive = true;
-  app.close(() => {
-    console.log("server closed");
-    process.exit(0);
-  });
+  app.close &&
+    app.close(() => {
+      console.log("server closed");
+      process.exit(0);
+    });
 });
