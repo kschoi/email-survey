@@ -2,15 +2,12 @@
   "name": "email-survey",
   "version": "1.0.0",
   "main": "index.js",
-  "engines": {
-    "node": "12.18.3",
-    "npm": "6.13.4"
-  },
   "repository": "https://github.com/kschoi/email-survey.git",
   "author": "kyungsun choi <kschoi0308@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "pm2start": "pm2 start ecosystem.config.js",
     "pm2stop": "pm2 stop app",
     "pm2restart": "pm2 restart app"
@@ -18,7 +15,11 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongoose": "^5.10.0",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
