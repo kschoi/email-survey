@@ -24,7 +24,7 @@ routes(app);
 mongoose
 	.connect(process.env.MONGO_URI, { useNewUrlParser: true })
 	.then(() => console.log(`데이터베이스에 연결되었습니다. : ${process.env.MONGO_URI}`))
-	.catch((err) => console.log(`데이터베이스 연결 시 에러가 발생했습니다. : ${process.env.MONGO_URI}`));
+	.catch((err) => console.log(`데이터베이스 연결 시 에러가 발생했습니다. : ${err}`));
 
 app.listen(PORT, () => {
 	process.send && process.send("ready");
